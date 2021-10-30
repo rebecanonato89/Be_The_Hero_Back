@@ -4,7 +4,7 @@
   "host": "localhost",
   "port": 5432,
   "username": "postgres",
-  "password": "docker",
+  "password": "postgres",
   "database": "bethehero",
   "entities": ["./src/models/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
