@@ -1,14 +1,14 @@
 import { Column, Entity, CreateDateColumn,PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 
-@Entity ('occurrences')
-class Occurences {
+@Entity ('incidents')
+class Incidents {
 
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column()
-    tytle: string;
+    title: string;
     
     @Column()
     description: string
@@ -21,4 +21,4 @@ class Occurences {
 
 }
 
-export default Occurences
+export default Incidents

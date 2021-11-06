@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner, Table, TableForeignKey} from "typeorm";
 
-export class CreatOccurrences1631800141591 implements MigrationInterface {
+export class CreateIncidents1631800141591 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table ({
-                name:'occurrences',
+                name:'incidents',
                 columns: [
 
                     {
@@ -23,7 +23,7 @@ export class CreatOccurrences1631800141591 implements MigrationInterface {
                     },
 
                     {
-                        name: 'tytle',
+                        name: 'title',
                         type:'varchar',
                         isNullable:false
                     },
@@ -45,17 +45,21 @@ export class CreatOccurrences1631800141591 implements MigrationInterface {
                         type: 'timestamp',
                         default: 'now()'
                     },
-
                     
+                    {
+                    name: 'updated_at',
+                    type: 'timestamp',
+                    default: 'now()'
+                    } 
 
                 ],
             })
             
         )
         await queryRunner.createForeignKey(
-            'occurrences',
+            'incidents',
             new TableForeignKey({
-                name: 'FKOccurrencesOng',
+                name: 'FKIncidentsOng',
                 columnNames: ['ong_id'],
                 referencedTableName: 'ongs',
                 referencedColumnNames: ['id'],
@@ -65,7 +69,7 @@ export class CreatOccurrences1631800141591 implements MigrationInterface {
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable(
-            'occurrences'
+            'incidents'
         )
     }
 

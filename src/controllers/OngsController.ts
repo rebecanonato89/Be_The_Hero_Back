@@ -28,4 +28,5 @@ export default class OngsController {
         return response.status(200).json({ongToken});
     }
 
+
 };
