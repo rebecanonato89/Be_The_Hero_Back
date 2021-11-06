@@ -21,8 +21,6 @@ class IncidentsRepository implements IIncidentsRepository {
         return incidents;
 
     }
-
-
     
 }
 
