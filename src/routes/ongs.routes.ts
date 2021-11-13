@@ -1,8 +1,8 @@
 import 'reflect-metadata';
 import { Router } from "express";
 import OngsController from "../controllers/OngsController";
-import requestSchema from '../midllewares/OngsValidator';
-import OngValidate from '../midllewares/OngValidate';
+import requestSchema from '../middlewares/OngsValidator';
+import OngValidate from '../middlewares/OngValidate';
 
 
 const ongsRouter = Router();

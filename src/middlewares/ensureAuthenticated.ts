@@ -17,7 +17,6 @@ export default async function ensureAuthenticated(
 
   const authOng = request.headers.authorization;
 
-
   if (!authOng) {
     throw new Error("token invalid");
   }
@@ -42,10 +41,13 @@ export default async function ensureAuthenticated(
       throw new Error("token invalid");
     }
 
+    request.ong = {
+      ongId: ong.id
+    }
 
+    return next();
   } catch {
 		throw new Error("token invalid");
 	}
-
 
 }

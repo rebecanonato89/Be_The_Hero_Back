@@ -16,9 +16,9 @@ class IncidentsRepository implements IIncidentsRepository {
 
         const incidents = this.ormRepository.create(dataIncidents);
 
-        await this.ormRepository.save(incidents);
+        const incident = await this.ormRepository.save(incidents);
 
-        return incidents;
+        return incident;
 
     }
     
