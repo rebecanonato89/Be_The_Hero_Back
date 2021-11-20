@@ -1,5 +1,6 @@
 import { Request , Response } from "express";
 import CreateIncidentsService from "../services/CreateIncidentsService";
+import FindIncidentService from "../services/FindIncidentService";
 
 
 export default class IncidentsController{
@@ -14,5 +15,16 @@ export default class IncidentsController{
 
         return response.status(201).json({ incident })        
     };
+
+    public async find (request: Request, response: Response){
+
+        const { ongId } = request.ong;
+
+        const findIncidentService = new FindIncidentService();
+
+        const incidents = await findIncidentService.execute(ongId);
+
+        return response.status(200).json({ incidents });
+    }
 
 };
