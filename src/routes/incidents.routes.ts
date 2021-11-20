@@ -12,5 +12,6 @@ incidentsRouter.use(ensureAuthenticated);
 
 incidentsRouter.post('/', IncidentValidate(requestSchema), incidentsController.create);
 incidentsRouter.get('/', incidentsController.find);
+incidentsRouter.delete('/:id', incidentsController.delete);
 
 export default incidentsRouter;

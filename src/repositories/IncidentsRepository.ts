@@ -33,6 +33,9 @@ class IncidentsRepository implements IIncidentsRepository {
         return incidents;
     }
     
+    async deleteIncidentById(id: string): Promise<void>{
+        await this.ormRepository.delete(id);
+    }
 }
 
 export default IncidentsRepository;
